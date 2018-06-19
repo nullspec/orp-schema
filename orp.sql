@@ -18,7 +18,7 @@ CREATE TABLE orp.audit (
   tMeta TEXT,
   dCreated TIMESTAMP,
   dModified TIMESTAMP,
-  iCreateId INTEGER REFERENCES orp.admin (iAdminId),
+  iCreatedId INTEGER REFERENCES orp.admin (iAdminId),
   iModifiedId INTEGER REFERENCES orp.admin (iAdminId)
 );
 
@@ -47,7 +47,7 @@ CREATE TABLE orp.person (
 
 /* Someone who has registered */
 CREATE TABLE orp.registrant (
-  IRegistrantId SERIAL PRIMARY KEY,
+  iRegistrantId SERIAL PRIMARY KEY,
   iPersonId INTEGER REFERENCES orp.person(iPersonId),
   tType VARCHAR(32)
 );
